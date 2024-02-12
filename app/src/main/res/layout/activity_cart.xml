@@ -1,0 +1,251 @@
+<!-- res/layout/activity_cart.xml -->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".CartActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Back button to navigate back -->
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="Back Button"
+            android:padding="8dp"
+            android:src="@drawable/back_button"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <!-- Cart heading -->
+        <TextView
+            android:id="@+id/cartHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_toEndOf="@id/backButton"
+            android:text="My Cart"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <!-- RecyclerView for displaying cart items -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewCart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cartHeading"
+            android:layout_marginTop="16dp" />
+
+        <!-- CardView for order summary, subtotal, delivery fee, and total -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/recyclerViewCart"
+            android:layout_marginTop="16dp"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="8dp"
+            android:id="@+id/cardViewOrderSummary">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Order Summary Heading -->
+                <TextView
+                    android:id="@+id/textViewOrderSummary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Order Summary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- Subtotal -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:id="@+id/textViewSubtotalLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Subtotal"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textViewSubtotalAED"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="AED"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/textViewSubtotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="1.00"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Delivery fee -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:id="@+id/textViewDeliveryFeeLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Delivery Fee"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textViewDeliveryFeeAED"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="AED"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/textViewDeliveryFee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="1.00"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <!-- Divider line -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:background="?android:attr/listDivider" />
+
+                <!-- Total -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:id="@+id/textViewTotalLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Total"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewTotalAED"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="AED"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/textViewTotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="2.00"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardViewOrderSummary"
+            android:id="@+id/checkout"
+            android:orientation="horizontal"
+            >
+
+        <!-- Button for proceeding to checkout -->
+        <Button
+            android:id="@+id/Additems"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Add Items"
+            android:textSize="20sp"
+            app:cornerRadius ="20dp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/lavender"
+            />
+
+            <Button
+                android:id="@+id/checkoutButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="Check Out"
+                android:textSize="20sp"
+                app:cornerRadius ="20dp"
+                android:backgroundTint="@color/black"
+                />
+
+        </LinearLayout>
+
+        <!-- Meow Bottom Navigation-->
+        <com.etebarian.meowbottomnavigation.MeowBottomNavigation
+            android:id="@+id/bottomNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/checkout"
+            app:mbn_backgroundBottomColor="#D9E4ED"
+            app:mbn_circleColor="#ffffff"
+            app:mbn_countBackgroundColor="#ff6f00"
+            app:mbn_countTextColor="#ffffff"
+            app:mbn_defaultIconColor="#90a4ae"
+            app:mbn_rippleColor="#2f424242"
+            app:mbn_selectedIconColor="#3c415e"
+            app:mbn_shadowColor="#1f212121"
+            app:menu="@menu/menu_navigation"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+</ScrollView>
+
+
+
+

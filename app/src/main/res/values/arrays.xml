@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="emirates_array">
+        <item>Abu Dhabi</item>
+        <item>Dubai</item>
+        <item>Sharjah</item>
+        <item>Ajman</item>
+        <item>Umm Al-Quwain</item>
+        <item>Fujairah</item>
+        <item>Ras Al Khaimah</item>
+    </array>
+</resources>

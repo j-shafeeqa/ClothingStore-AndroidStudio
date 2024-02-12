@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:backgroundTint="@color/white"
+    tools:context=".CheckoutActivity">
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:contentDescription="Back Button"
+        android:padding="8dp"
+        android:src="@drawable/back_button"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <!-- Cart heading -->
+    <TextView
+        android:id="@+id/checkoutHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_toEndOf="@id/backButton"
+        android:text="Checkout"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/locationinfo"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checkoutHeading"
+        android:layout_centerInParent="true"
+        app:cardCornerRadius="20dp"
+        tools:ignore="ExtraText">
+
+        <!-- Product details on the right of the image -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/location" />
+
+                <TextView
+                    android:id="@+id/addresstype"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:text="Home"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/Streetname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Rashidiya 1"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/bldgname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="Building Name"
+                android:textSize="16sp" />
+
+
+            <!-- TextView for product quantity -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/floor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="Floor Number: "
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/floorno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text=""
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- TextView for product total in AED in the right corner -->
+                <TextView
+                    android:id="@+id/room"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="Room Number:"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/roomno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="5dp"
+                    android:text=""
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/paymentinfo"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/locationinfo"
+        android:layout_centerInParent="true"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="20dp"
+        tools:ignore="ExtraText">
+
+        <!-- Product details on the right of the image -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/cards" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:text="Payment Information"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/Cardnumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="234"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:endIconMode="clear_text"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="5"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_gravity="top"
+                    android:inputType="number">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/expiry"
+                        android:layout_width="145dp"
+                        android:layout_height="50dp"
+                        android:hint="Expiry" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:endIconMode="clear_text"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="3"
+
+                    android:inputType="number">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/cvv"
+                        android:layout_width="133dp"
+                        android:layout_height="wrap_content"
+                        android:hint="CVV code" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+
+            </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+    <Button
+        android:id="@+id/btnPlaceOrder"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="470dp"
+        android:text="Place Order"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:cornerRadius ="15dp"
+        android:backgroundTint="@color/black"/>
+
+    <!-- Meow Bottom Navigation-->
+    <com.etebarian.meowbottomnavigation.MeowBottomNavigation
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mbn_backgroundBottomColor="#D9E4ED"
+        app:mbn_circleColor="#ffffff"
+        app:mbn_countBackgroundColor="#ff6f00"
+        app:mbn_countTextColor="#ffffff"
+        app:mbn_defaultIconColor="#90a4ae"
+        app:mbn_rippleColor="#2f424242"
+        app:mbn_selectedIconColor="#3c415e"
+        app:mbn_shadowColor="#1f212121"
+        app:menu="@menu/menu_navigation"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

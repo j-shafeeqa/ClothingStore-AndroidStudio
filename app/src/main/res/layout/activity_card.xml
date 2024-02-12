@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".CardActivity">
+
+    <!-- Back button to navigate back -->
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:contentDescription="Back Button"
+        android:padding="8dp"
+        android:src="@drawable/back_button"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <!-- card heading -->
+    <TextView
+        android:id="@+id/cardheading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_toEndOf="@id/backButton"
+        android:text="Enter Card Details"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginTop="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:endIconMode="clear_text"
+        app:counterEnabled="true"
+        app:counterMaxLength="50"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Cardusername"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Name on the card"
+            android:inputType="textPersonName"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:endIconMode="clear_text"
+        app:counterEnabled="true"
+        app:counterMaxLength="19"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="140dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Cardnumber"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Enter card number"
+            android:inputType="number"
+            android:digits="0123456789"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="210dp"
+        android:layout_marginStart="16dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:endIconMode="clear_text"
+            app:counterEnabled="true"
+            app:counterMaxLength="5"
+            android:layout_marginEnd="36dp"
+            android:layout_gravity="top"
+            android:inputType="number">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/expiry"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:hint="Expiry"
+                android:digits="0123456789"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:endIconMode="clear_text"
+            app:counterEnabled="true"
+            app:counterMaxLength="3"
+            android:layout_gravity="top"
+            android:inputType="number">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cvv"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:hint="CVV code"
+                android:digits="0123456789"/>
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/savecard"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="70dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Pay Now"
+        android:textSize="20sp"
+        app:cornerRadius ="15dp"
+        android:backgroundTint="@color/black"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditLocationActivity">
+
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:contentDescription="Back Button"
+        android:padding="8dp"
+        android:src="@drawable/back_button"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/locationheading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_toEndOf="@id/backButton"
+        android:text="Edit Address"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/chipgrplayout"
+        android:layout_below="@id/locationheading"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp">
+
+        <com.google.android.material.chip.ChipGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:singleLine="true"
+            android:id="@+id/chipgrp"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="Apartment"
+                android:textSize="20sp"
+                app:chipIcon="@drawable/apartment"
+                app:chipIconSize="25dp"
+                app:chipMinHeight="35dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip3"
+                android:layout_marginStart="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="House"
+                android:textSize="20sp"
+                app:chipIcon="@drawable/house"
+                app:chipIconSize="25dp"
+                app:chipMinHeight="35dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip4"
+                android:layout_marginStart="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="Office"
+                android:textSize="20sp"
+                app:chipIcon="@drawable/office"
+                app:chipMinHeight="35dp" />
+
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+
+
+    <!-- Edit Texts Section -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textlayouts"
+        android:layout_below="@id/chipgrplayout"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="26dp"
+        android:orientation="vertical">
+
+        <!-- Building Name -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:endIconMode="clear_text"
+            app:counterEnabled="true"
+            app:counterMaxLength="50">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/BuildingName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Building name"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 "/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:endIconMode="clear_text"
+                app:counterEnabled="true"
+                app:counterMaxLength="4"
+                android:layout_marginEnd="18dp"
+                android:layout_gravity="top"
+                android:inputType="number">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/roomnumber"
+                    android:layout_width="170dp"
+                    android:layout_height="50dp"
+                    android:hint="Room Number"
+                    android:digits="0123456789-"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:endIconMode="clear_text"
+                app:counterEnabled="true"
+                app:counterMaxLength="2"
+                android:layout_gravity="top"
+                android:inputType="number">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/floornoo"
+                    android:layout_width="160dp"
+                    android:layout_height="50dp"
+                    android:hint="Floor Number"
+                    android:digits="0123456789GroundBasementPenthouse"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:endIconMode="clear_text"
+            app:counterEnabled="true"
+            app:counterMaxLength="50"
+            android:layout_gravity="top">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Streetname"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Street Name and Emirate"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 "/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:endIconMode="clear_text"
+            android:layout_gravity="top">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Additional"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Additional Directions" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:endIconMode="clear_text"
+            app:counterEnabled="true"
+            app:counterMaxLength="13"
+            android:layout_marginTop="20dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number"
+                android:inputType="phone"
+                android:text="+971"
+                android:digits="0123456789"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="match_parent"
+        android:layout_below="@id/textlayouts"
+        android:layout_height="70dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Save Address"
+        android:textSize="20sp"
+        app:cornerRadius ="15dp"
+        android:backgroundTint="@color/black"
+        />
+
+
+    </RelativeLayout>
